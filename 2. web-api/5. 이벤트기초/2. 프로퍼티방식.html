@@ -18,9 +18,14 @@
             alert('안녕하세요!');
         }
 
+        // 디스트럭쳐 
         const [$b1, $b2, $b3] = [...document.querySelectorAll('button')];
 
+        // 내가 부르는게 아니라, 브라우저가 호출해야 되는거니까 
+        //sayHello() 함수호출로 하면 안되고 
+        //sayHello 함수 자체를 정의해둬야 한다. 
         $b1.onclick = sayHello;
+        
         $b2.onclick = function() {
             $b2.style.width= '150px';
         };
@@ -30,10 +35,11 @@
         $b3.onmouseleave = () => {
             $b3.style.background = 'yellow';
         };
+        // 프로퍼티 방식은 두개 이벤트 바인딩 못함. 오버라이딩 됨 
         $b3.onmouseleave = sayHello;
 
-        //이벤트핸들러 제거
-        $b3.onmouseenter = null;
+        // //이벤트핸들러 제거
+        // $b3.onmouseenter = null;
 
     </script>
 

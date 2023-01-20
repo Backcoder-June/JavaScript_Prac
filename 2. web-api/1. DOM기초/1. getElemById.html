@@ -12,7 +12,6 @@
     </style>
 </head>
 <body>
-    
     <ul>
         <li id="apple">사과</li>
         <li id="banana">바나나</li>
@@ -26,9 +25,9 @@
         // console.log(document.body);
 
         const $bnn = document.getElementById('banana');
-        console.log($bnn.textContent);
+        console.log($bnn.innerHTML);
 
-        $bnn.textContent = '브네이너';
+        // $bnn.textContent = '브네이너';
 
         console.log($bnn.style);
         $bnn.style.color = 'yellow';

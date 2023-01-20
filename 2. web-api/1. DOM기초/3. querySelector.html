@@ -16,7 +16,32 @@
         <li class="fr pineapple">파인애플</li>
     </ul>
 
+    <input id="here" type="button" value="요기">
+
     <script>
+        let a = 100; 
+
+    document.querySelector('#here').onclick = function(a, e){
+        if(a > 0){
+        a++; 
+    }
+        alert("yes!");
+        alert(a);
+        alert(e);
+    };
+
+
+
+function pluse(a){
+    if(a > 0){
+        a++; 
+        console.log("inner a : " + a );
+        return a; 
+    }
+}
+
+a = pluse(a); 
+console.log("a : " + a);
 
         // const $grape = document.querySelector('.grape');
         // const $grape = document.querySelector('#fruits > li:nth-child(3)');
@@ -25,6 +50,7 @@
 
         $grape.textContent = '맛있는 포도';
 
+        // 배열로 리턴
         const $elems = document.querySelectorAll('.fr');
         console.log($elems);
 

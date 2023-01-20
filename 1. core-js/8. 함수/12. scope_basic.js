@@ -1,12 +1,17 @@
 
+y = 0; 
 var x = 10;
 
+// 함수에서 전역변수 못바꾸는 지 
 function foo() {
     var y = 3;    
     var z = y ** 2;
 }
 
 console.log(x);
+
+var y = 0.1; 
+console.log("y값" + y); 
 
 console.log('======================');
 
@@ -27,6 +32,7 @@ function bar() {
         var z = 'zzz';
         console.log(z);
     }
+    hi();
 
     return z;
 }

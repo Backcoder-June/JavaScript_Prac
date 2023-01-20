@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        label {
+            display: block;
+        }
+        #add-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#">
+        <label>
+            제목: <input type="text" name="title" id="title-input">
+        </label>
+        <button id="add-btn">등록하기</button>
+    </form>
+
+
+    <h1>할 일 목록</h1>
+    <section class="todo">
+        <ul class="todo-list">
+
+        </ul>
+    </section>
+
+    
+    <script>
+        // 요청 URL
+        const API_BASE_URI = 'http://localhost:8080/api/todos';
+
+
+        const getTodoList = url => {
+
+fetch(url) // 요청보내기
+    .then(res => res.json()) // 결과에서 json꺼내기
+    .then(todoList => { // json을 js객체로 변환
+        // console.log(todoList);
+        render(todoList);
+    });
+
+/*
+const response = fetch(url);
+// console.log(response);
+
+// 응답 결과 받기
+const json = response
+            .then(resData => resData.json());
+json.then(todoList => {
+    console.log(todoList);
+});
+*/
+};
+// 함수 호출
+getTodoList(API_BASE_URI);
+
+
+
+
+        // 렌더링 함수
+        const render = ({todos}) => {
+            console.log('데이터');
+            console.log(todos);
+
+            let tags = '';
+            todos.forEach(todo => {
+                const {todoId, done, title} = todo;
+
+                tags += `
+                    <li data-id=${todoId}>
+                        제목: ${title}, 완료여부: ${done}
+                        <input class='del-btn' type='button' value='삭제'>
+                    </li>
+                `;
+            });
+            const $ul = document.querySelector('.todo-list');
+            $ul.innerHTML = tags;
+        };
+
+
+        // bubbling 활용 - 부모에 이벤트 걸어서 삭제기능 
+        // target.matches 걸어서 자식한테만 이벤트 발생하도록 
+        document.querySelector('.todo-list').onclick = e => {
+            if(!e.target.matches('.todo-list .del-btn')){
+                return; 
+            }
+
+            console.log(e.target);
+
+            // parentNode 를 사용해서, 부모 태그 가져옴 => id 이용 하기 
+            console.log(e.target.parentNode);
+            
+            // 개발자도구 properties 에서 dataset 에 data-XX 값 담겨있음 XX로 받아서 사용 
+            console.log(e.target.parentNode.dataset.id);
+
+            const id = e.target.parentNode.dataset.id; 
+
+            // 백에 삭제요청 url/id 
+            fetch(`${API_BASE_URI}/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(todoList => {
+                render(todoList);
+            });
+            
+
+
+
+
+        };
+
+
+
+        // 서버에 get요청 보내기
+     
+
+
+        // 이벤트 바인딩 등록버튼 
+        document.getElementById('add-btn').onclick = e => {
+        e.preventDefault(); 
+
+        console.log('등록'); 
+
+        const $titleInput = document.getElementById('title-input'); 
+        const payload = {
+            title: $titleInput.value
+        };
+
+        fetch(API_BASE_URI, {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json', 
+            },
+            body: JSON.stringify(payload)
+        })
+        // success 
+        .then(res => res.json())
+        .then((todoList) => {
+            render(todoList); 
+        });
+
+    };
+
+
+   
+    </script>
+
+</body>
+</html>
