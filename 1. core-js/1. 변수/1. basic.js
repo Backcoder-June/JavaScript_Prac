@@ -32,3 +32,12 @@ var user_name = '고길동';
 console.log(`안녕하세요! 제 이름은 ${user_name}입니다`);
 console.log(`${user_name}은 아주 착합니다.`);
 
+
+console.log(user_name + ' : 백틱 안썻을 때는 변수명 그대로 가져다 사용');
+console.log(`백틱 썼을 땐 줄바꿈 등도 그대로 인식해서 들어가고 
+변수명 : ${user_name} 의 경우  달러로 변수 가져다 쓸 수 있는데, 
+JSP에서 쓸 경우 $문법이 겹친다. 
+이땐 $ 는 EL을 의미하고, 
+백틱 에서는 \$ 백슬러쉬로 구분해서 사용한다. 
+`);
+

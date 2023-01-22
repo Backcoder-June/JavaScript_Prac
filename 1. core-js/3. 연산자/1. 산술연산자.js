@@ -11,11 +11,11 @@ console.log(4 % 10);
 console.log(0 % 4);
 
 //불가능한 연산 - 0으로 나눌 수 없습니다.
-console.log(4 / 0);
-console.log(4 % 0);
+console.log(4 / 0); //Infinity 
+console.log(4 % 0); // NaN
 
 var num = 2;
-console.log(num ** 3);
+console.log(num ** 3); //제곱 
 
 console.log('=============================');
 
@@ -33,6 +33,14 @@ console.log(`x: ${x}`);
 var a = 10;
 var b = a++;
 console.log(`a: ${a}, b: ${b}`);
+
+for(var i = 0; i < 5; i ++) {
+    t = i;  
+    let newt = t++;
+
+    console.log(`t : ${t}, newt : ${newt}`); 
+}
+
 
 var c = 10;
 var d = ++c;

@@ -6,10 +6,12 @@
 4. admin의 값을 console 창에 띄워보세요. "John"이 출력되어야 합니다.
 */
 
-var admin, myName
-myName = 'John' 
-admin = myName
-console.log(admin)
+let admin;
+let myName;
+
+myName = 'John'; 
+admin = myName; 
+console.log(admin); 
 
 /*
 - 2번문제
@@ -21,6 +23,8 @@ console.log(admin)
    저장하는 변수를 만들어보세요. 
    변수 이름은 어떻게 지어야 할까요?
 */
+
+//camel Case 
 var ourLivingPlanet = '지구';
 console.log(ourLivingPlanet);
 

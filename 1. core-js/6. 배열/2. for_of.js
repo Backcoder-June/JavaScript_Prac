@@ -1,6 +1,10 @@
 
 
+
 var weekDays = ['월', '화', '수', '목', '금', '토', '일'];
+
+// [ foreach 문 ] 
+// => : 대신 of 만 써줌 
 
 for (var day of weekDays) {
     console.log(day + '요일');

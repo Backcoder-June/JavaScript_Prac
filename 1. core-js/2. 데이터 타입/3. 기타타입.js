@@ -17,3 +17,9 @@ console.log(hello);
 //null타입: 개발자가 의도적으로 값이 없다는 것을 표현할 때
 var apple = '사과';
 apple = null;
+console.log(apple);
+console.log(typeof apple);//object - null 
+
+apple = '';
+console.log(typeof apple); // string 
+

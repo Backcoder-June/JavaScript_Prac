@@ -13,7 +13,7 @@ x **= 4;
 console.log(`x: ${x}`);
 
 var a = 5;
-a =+ 3;
+a =+ 3;  // 양수 + 로 인식, 오버로딩 
 console.log(`a: ${a}`);
 
 var b = 7;

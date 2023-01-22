@@ -1,3 +1,8 @@
+// => boolean 이 아닌 데이터를 boolean 으로 변환해주는 개념 
+
+// if (100) { }  
+// : 100 은 boolean 이 아닌 number, 0 이 아니므로 true 
+
 
 // 0, '', null, undefined, NaN -> 거짓판정
 

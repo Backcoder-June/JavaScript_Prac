@@ -7,6 +7,7 @@ var index = foods.indexOf('어묵'); // 탐색실패시 -1 반환
 console.log(`찾은 인덱스: ${index}번`);
 
 // slice() : 배열을 일정 부분 잘라내어 새로운 사본 배열 반환
+// slice(2,5) : subString 효과 ( 2번 인덱스부터 5번 인덱스 '전' 까지 ) 
 console.log('==========================');
 
 // 2번 이상 5번 미만 추출
