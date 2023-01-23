@@ -1,6 +1,6 @@
 
 
-var score = 7;
+var score = 70;
 
 if (score >= 60) { 
     console.log('시험에 합격했습니다.');

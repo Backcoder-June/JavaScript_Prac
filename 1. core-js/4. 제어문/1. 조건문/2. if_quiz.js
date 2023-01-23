@@ -16,14 +16,6 @@
 
 
 
-
-
-
-
-
-
-
-
 var height = +prompt('당신의 키는??');
 var age = +prompt('당신의 나이는?? ');
 
