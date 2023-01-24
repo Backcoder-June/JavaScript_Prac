@@ -20,8 +20,10 @@ console.log(result2);
 //명시적 논리변환
 console.log('=========================');
 
-var ex1 = Boolean(null);
+// null / '' / 0 / undefiend => false 
+var ex1 = Boolean(0);
 console.log(ex1);
 
+// ! => false  !! => true 
 var ex2 = !!'메롱';
 console.log(ex2);

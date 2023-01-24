@@ -30,3 +30,8 @@ for (var i = 0; i < fruits.length; i++) {
         console.log(fruits[i] + ' 맛있어요!');
     }
 }
+
+// foreach문 => forof 
+for (const iterator of fruits) {
+    console.log(`iter : ${iterator}`);
+}

@@ -1,6 +1,6 @@
 
 
-// var num = +prompt('정수값: ');
+var num = +prompt('정수값: ');
 
 var result = '';
 var count = 0;

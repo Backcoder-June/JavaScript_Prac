@@ -24,7 +24,7 @@ if ([]) console.log('ok10');
 console.log('=====================');
 
 var num = 9;
-if (num % 2) {
+if (num % 2) { //if (num % 2 !== 0) {
     console.log('홀수입니다.');
 } else {
     console.log('짝수입니다.');
